@@ -1,0 +1,14 @@
+#  假设要查询 title 中包含关键词 java，并且 price 不能高于 70，description 可以包含也可以不包含虚拟机的书籍，构造 bool 查询语句如下：
+query:
+  bool:
+    must:
+     - match:
+        title:"java"
+     - match:
+        price:
+          lte:70
+     should:
+       match:.
+
+
+         description: "虚拟机"

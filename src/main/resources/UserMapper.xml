@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.randke.mapper.test1.UserMapper">
+
+    <insert id="insert" parameterType="com.randke.model.User">
+        INSERT INTO USER (id, uname, pwd) VALUES (#{id}, #{uname},#{pwd})
+    </insert>
+
+</mapper>

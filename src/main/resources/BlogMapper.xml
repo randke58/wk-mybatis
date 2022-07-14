@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.randke.mapper.test1.BlogMapper">
+    <sql id="ssss" databaseId="" lang="">
+        aaaa
+    </sql>
+
+    <insert id="insert" parameterType="com.randke.model.Blog">
+        INSERT INTO blog (id) VALUES (#{id})
+    </insert>
+
+    <select id="select" parameterType="int" resultType="com.randke.model.Blog">
+        select * from blog where id = #{id}
+    </select>
+
+    <!--<select id="selectBlog" parameterType="int" resultType="com.randke.model.Blog">-->
+    <!--select * from blog where id = #{id}-->
+    <!--</select>-->
+
+    <select id="selectByIdAndUname" resultType="com.randke.model.Blog">
+        select * from blog where id = #{id} and uname =#{uname}
+    </select>
+
+    <select id="queryByPage" resultType="com.randke.model.Blog" parameterType="java.util.Map" useCache="false"
+            flushCache="true">
+        select * from blog
+        where 1=1
+        <if test="id !=null">
+            and id like "%"
+        </if>
+    </select>
+
+    <select id="queryByPage1" resultType="com.randke.model.Blog">
+        select * from blog
+        where 1=1
+
+    </select>
+
+    <insert id="" keyColumn="" useGeneratedKeys="true">
+    </insert>
+
+
+</mapper>
